@@ -7,7 +7,8 @@ Currently built using:
 
 To get running:
 
-1. git clone git://github.com/blahed/frank.git <dir>
-2. cd <dir>
-3. frank server
-4. http://localhost:3601/
+1. gem install frank
+2. git clone git@github.com:tkrajcar/wcnh_web.git <dir>
+3. cd <dir>
+4. frank server
+5. http://localhost:3601/
