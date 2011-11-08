@@ -8,7 +8,7 @@ Currently built using:
 To get running:
 
 1. gem install frank
-2. git clone git@github.com:tkrajcar/wcnh_web.git <dir>
-3. cd <dir>
+2. git clone git@github.com:tkrajcar/wcnh_web.git (new dir)
+3. cd (new dir)
 4. frank server
 5. http://localhost:3601/
