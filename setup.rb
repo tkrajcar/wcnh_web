@@ -58,11 +58,11 @@ Frank.export.path = "exported"
 #  Just uncomment the Publish settings below and
 #  make the appropriate changes.
 #
-#  Frank.publish.host = "example.com"
-#  Frank.publish.path = "/www"
-#  Frank.publish.username = 'me'
+ Frank.publish.host = "wcmush.com"
+ Frank.publish.path = "dev_www"
+ Frank.publish.username = 'wcmush'
 #  Frank.publish.password = 'secret'
-#  Frank.publish.port = 22
+ Frank.publish.port = 22
 #
 
 # ----------------------
