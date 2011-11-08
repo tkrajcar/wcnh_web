@@ -1,0 +1,36 @@
+#granita.column.grid_12
+
+  = render_partial 'partials/systems'
+
+  .row
+    .body.column.grid_9
+      %h1 Granita
+      %p= lorem.paragraph
+
+      %h2 Geography
+      %p= lorem.paragraph
+
+      %h2 Security
+      %p= lorem.paragraph
+
+      %h2 History
+      %p= lorem.paragraph
+
+    .sidebar.column.grid_3
+      %img{:src => '/images/vespus.jpg'}
+      %table
+        %tr
+          %td.label
+            Type:
+          %td.data
+            Terran
+        %tr
+          %td.label
+            Gravity:
+          %td.data
+            1.03 Earth gees
+        %tr
+          %td.label
+            Mass:
+          %td.data
+            1.702 Earth masses

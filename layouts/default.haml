@@ -1,0 +1,49 @@
+!!! Strict
+%html
+  %head
+    %title Wing Commander: New Horizon
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => '/css/style.css'}
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => 'http://fonts.googleapis.com/css?family=Contrail+One|Terminal+Dosis:400,600'}
+  %body
+    %img{:id => 'bg', :src => '/images/bg.jpg'}
+
+    #header.row
+      .logo.column.grid_6
+        %a{:href => '/'}
+          %img{:src => lorem.image('400x100')}
+      #nav.column.grid_6
+        .row
+          .column.grid_2
+            %h1 The Game
+            %ul
+              %li
+                %a{:href => '/intro/'} Introduction
+              %li
+                %a{:href => '/faq/'} Frequent Questions
+              %li
+                %a{:href => '/play/'} Begin Playing
+          .column.grid_2
+            %h1 The Setting
+            %ul
+              %li
+                %a{:href => '/systems/bistango/'} Systems
+              %li
+                %a{:href => '#'} Races
+              %li
+                %a{:href => '#'} Organizations
+          .column.grid_2
+            %h1 The Story
+            %ul
+              %li
+                %a{:href => '/origins/'} Origins
+              %li
+                %a{:href => '#'} Present Day
+              %li
+                %a{:href => '#'} Running Arcs
+
+    #page.row
+      = yield
+
+    #footer.row
+      .column.grid_12
+        Footer
