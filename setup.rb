@@ -60,7 +60,7 @@ Frank.export.path = "exported"
 #
  Frank.publish.host = "wcmush.com"
  Frank.publish.path = "dev_www"
- Frank.publish.username = 'wcmush'
+ Frank.publish.username = 'wcnh'
 #  Frank.publish.password = 'secret'
  Frank.publish.port = 22
 #
