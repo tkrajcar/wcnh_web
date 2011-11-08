@@ -12,3 +12,7 @@ To get running:
 3. cd (new dir)
 4. frank server
 5. http://localhost:3601/
+
+To export to static assets:
+
+1. frank export (target dir)
