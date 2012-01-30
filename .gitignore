@@ -15,3 +15,5 @@
 /tmp
 
 .sass_cache
+
+public/assets

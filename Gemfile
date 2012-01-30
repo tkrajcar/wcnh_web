@@ -14,6 +14,8 @@ gem 'bson_ext', '~> 1.5'
 
 gem 'RedCloth', '~> 4.2.9' # markdown CMS
 
+gem 'thin'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
