@@ -1,4 +1,8 @@
 WcnhWeb::Application.routes.draw do
+  get "pages/homepage"
+
+  get "pages/:name" => "pages#show", :as => "page"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
