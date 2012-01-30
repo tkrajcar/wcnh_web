@@ -1,5 +1,5 @@
 WcnhWeb::Application.routes.draw do
-  get "pages/homepage"
+  root :to => "pages#homepage"
 
   get "pages/:name" => "pages#show", :as => "page"
 
