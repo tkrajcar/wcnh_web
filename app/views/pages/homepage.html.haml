@@ -1,0 +1,19 @@
+-content_for :page_title, "Homepage"
+#home.column.grid_12
+  .row
+    .lead.column.grid_12
+      %p Let your imagination run wild in our interactive storytelling universe.
+
+  .row
+    .sublead.column.grid_12
+      %p
+        Wing Commander: New Horizon MUSH is a text-based storytelling/roleplaying community, <br />
+        set in the Wing Commander video game universe. It's 100% free to play and easy to get started!<br />
+        Check the <a href="/pages/introduction/">Introduction</a> for more information, read our other pages, and <a href="/pages/begin-playing/">begin playing!</a>
+
+  .row
+    .events.column.grid_6
+      =render :partial => "shared/events"
+    .reports.column.grid_6
+      =render :partial => "shared/headlines"
+

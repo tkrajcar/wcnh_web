@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %title Wing Commander: New Horizon MUSH
+    = stylesheet_link_tag    "application", :media => "all" 
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => 'http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Terminal+Dosis:400,600'}
+
+    = javascript_include_tag "application" 
+    = csrf_meta_tags
+  %body
+    #bg=image_tag "bg.jpg"
+
+    #header.row
+      .logo.column.grid_6
+        %a{:href => '/'}= image_tag "logo.png"
+      =render :partial => "shared/nav"
+    #page.row
+      = yield
+
+    #footer.row
+      .column.grid_12
+        %p
+          <a href="https://www.facebook.com/wcmush" target="_blank"><img src="/assets/social/facebook.png" alt="Facebook" /></a>
+          <a href="https://twitter.com/wcmush" target="_blank"><img src="/assets/social/twitter.png" alt="Twitter" /></a>
+        %p All content Copyright &copy; 2012 Wing Commander: New Horizon MUSH unless prior copyright ownership exists. Design by <a href="http://www.capelio.com" target="_blank">Capelio</a>.
+  <script type="text/javascript">var clicky_site_ids = clicky_site_ids || [];clicky_site_ids.push(66499509);(function() {var s = document.createElement('script');s.type = 'text/javascript';s.async = true;s.src = '//static.getclicky.com/js';( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );})();</script>

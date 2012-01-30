@@ -1,0 +1,63 @@
+Package contents:
+README - this file.
+LICENSE - the terms under which you may use FMud.
+FMud.swf - the FMud binary.
+FMud.html - an example html page that embeds FMud.
+flashpolicy.xml - an example socket policy file.
+flashpolicyd.py - standalone python script to serve the policy file.
+
+Installation:
+Edit FMud.html and flashpolicy.xml with the details for your mud. You can
+change the flashvars parameters to set some defaults, see below. You can 
+change the height and width parameters in the html and FMud will resize
+accordingly. Set the policy_port parameter to the port number that you are 
+serving the socket policy file, the default is 843. Ensure you have set the 
+correct path to the FMud.swf file.
+
+Flashvars:
+The following parameters can be specified in the embedding page and will be
+passed to FMud when it runs.
+host - required, this is the mud connection address
+port - required, this is the mud connection port
+policy_port - required, set it to the port you are serving your policy file on
+title - name of your mud, use + instead of spaces
+font - default font, must be available on user system and will be 
+overridden by user preferences
+font_size - default font size, will be overridden by user preferences
+hide_password - 1 or 0 to enable or disable password hiding during login
+name - string to send first on connect
+pass - string to send second on connect
+
+Only the host, port and policy_port parameters are required.
+
+Requirements:
+Adobe Flash Player version 10 is required to make use of the save and load
+features. You need to serve a valid xml policy file on your server to allow 
+socket connections to your MUD from the FMud.swf application.
+Please see the following post for details:
+
+http://bc-dev.net/2008/05/14/security-changes-in-flash-player-901240/
+
+The provided python script requires python version 2.5 and will need to be
+run as root if you are binding port 843. Make sure your firewall allows
+connections on the policy port. 
+
+You can run the script as follows:
+
+nohup ./flashpolicyd.py --file=/path/to/flashpolicy.xml --port=843 &
+ 
+Some alternative scripts are linked in the post above.
+
+When editing flashpolicy.xml to allow specific domains you must ensure
+that the domain and subdomain exactly match where you host the FMud file.
+For example, if you are hosting FMud at domain "www.yourmud.com" you must
+specify "www.yourmud.com" and not "yourmud.com" in the flashpolicy.xml
+file.
+
+Comments, feedback and bug reports:
+fmud@bc-dev.net
+
+Further information and updates:
+http://bc-dev.net/projects/fmud
+
+FMud is (c) 2008 - 2009, Matt Adcock
