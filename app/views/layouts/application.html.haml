@@ -13,36 +13,7 @@
     #header.row
       .logo.column.grid_6
         %a{:href => '/'}= image_tag "logo.png"
-      #nav.column.grid_6
-        .row
-          .column.grid_2
-            %h2 The Game
-            %ul
-              %li
-                %a{:href => '/intro/'} Introduction
-              %li
-                %a{:href => '/faq/'} Frequent Questions
-              %li
-                %a{:href => '/play/'} Begin Playing
-          .column.grid_2
-            %h2 The Setting
-            %ul
-              %li
-                %a{:href => '/systems/'} Inhabited Systems
-              %li
-                %a{:href => '/races/human/'} Races
-              %li
-                %a{:href => '/orgs/esc/'} Organizations
-          .column.grid_2
-            %h2 The Story
-            %ul
-              %li
-                %a{:href => '/origins/'} Origins
-              %li
-                %a{:href => '/recent/'} Recent History
-              %li
-                %a{:href => '/arcs/'} Running Arcs
-
+      =render :partial => "shared/nav"
     #page.row
       = yield
 
