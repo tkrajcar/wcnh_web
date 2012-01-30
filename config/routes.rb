@@ -3,6 +3,28 @@ WcnhWeb::Application.routes.draw do
 
   get "pages/:name" => "pages#show", :as => "page"
 
+  # old site URLs
+  match "/intro" => redirect("/pages/introduction")
+  match "/faq" => redirect("/pages/faq")
+  match "/play" => redirect("/pages/begin-playing")
+
+  match "/systems" => redirect("/pages/inhabited-systems")
+  match "/systems/cabrea" => redirect("/pages/cabrea-system")
+  match "/systems/midgard" => redirect("/pages/midgard-system")
+  match "/systems/pembroke" => redirect("/pages/pembroke-system")
+  match "/systems/vespus" => redirect("/pages/vespus-system")
+  match "/races/human" => redirect("/pages/humans")
+  match "/races/kilrathi" => redirect("/pages/kilrathi")
+  match "/orgs/esc" => redirect("/pages/enigma-sector-consortium")
+  match "/orgs/esc/vsi" => redirect("/pages/von-sprechen-industries")
+  match "/orgs/esc/gc" => redirect("/pages/guinterin-combine/")
+  match "/orgs/esc/tr" => redirect("/pages/taffin-reclamation")
+  match "/orgs/kc" => redirect("/pages/kilrathi-commonwealth")
+
+  match "/origins" => redirect("/pages/origins")
+  match "/recent" => redirect("/pages/recent-history")
+  match "/arcs" => redirect("/pages/running-arcs")
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -59,4 +81,6 @@ WcnhWeb::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+  #
+
 end
