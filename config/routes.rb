@@ -1,4 +1,6 @@
 WcnhWeb::Application.routes.draw do
+  devise_for :users
+
   root :to => "pages#homepage"
 
   get "pages/:name" => "pages#show", :as => "page"
