@@ -89,9 +89,14 @@ body a:hover
   height: auto
   min-width: 1280px
   min-height: 100%
-
+#utility
+  margin-top: 10px
+  text-align: right
+  padding-right: 25px
+  padding-bottom: 3px
+  font-size: 10pt
 #header
-  margin-top: 20px
+  margin-top: 10px
   margin-bottom: 30px
 
 #footer
@@ -263,3 +268,19 @@ strong
 #home .reports .headline
   font-weight: bold
 
+// Flashes
+#notices p
+  background-color: #111
+  border: 1px solid $dgrey
+  padding: 15px
+  margin: 5px 0px
+#notices p.alert
+  border-color: yellow
+#notices p span
+  line-height: 16px
+  background: center left no-repeat
+  padding-left: 25px
+#notices p.notice span
+  background-image: url("/assets/icons/information.png")
+#notices p.alert span
+  background-image: url("/assets/icons/exclamation.png")

@@ -8,16 +8,21 @@
     = javascript_include_tag "application" 
     = csrf_meta_tags
   %body
-    #bg=image_tag "bg.jpg"
-
+    =image_tag "bg.jpg", :id => "bg"
+    
+    #utility.row
+      =render :partial => "shared/utility"
     #header.row
       .logo.column.grid_6
         %a{:href => '/'}= image_tag "logo.png"
       =render :partial => "shared/nav"
-    -if !notice.nil?
-      .notice=notice
-    -if !alert.nil?
-      .alert=alert
+    #notices.row
+      -if !notice.nil?
+        %p.notice
+          %span=notice
+      -if !alert.nil?
+        %p.alert
+          %span=alert
     #page.row
       = yield
 
