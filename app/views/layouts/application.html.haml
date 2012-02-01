@@ -14,6 +14,10 @@
       .logo.column.grid_6
         %a{:href => '/'}= image_tag "logo.png"
       =render :partial => "shared/nav"
+    -if !notice.nil?
+      .notice=notice
+    -if !alert.nil?
+      .alert=alert
     #page.row
       = yield
 

@@ -5,14 +5,12 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
 gem 'haml-rails'
 
 gem 'mongoid', '~> 2.4'
 gem 'bson_ext', '~> 1.5'
 
-gem 'RedCloth', '~> 4.2.9' # markdown CMS
+gem 'devise'
 
 gem 'thin'
 
