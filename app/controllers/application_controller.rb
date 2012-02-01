@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  rescue_from ActiveRecord::RecordNotFound, :with => :render_404
-
   def render_404
     if /(jpe?g|png|gif)/i === request.path
       render :text => "404 Not Found", :status => 404
