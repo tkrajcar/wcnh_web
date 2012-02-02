@@ -33,9 +33,9 @@ class ApiController < ApplicationController
     user.name = params[:current_name]
 
     if user.save == true
-      render FORMAT => {:success => true, :result => "Registration completed."} and return
+      render FORMAT => {:success => true, :message => "Registration completed."} and return
     else
-      render FORMAT => {:success => false, :result => user.errors.full_messages.to_sentence}
+      render FORMAT => {:success => false, :message => user.errors.full_messages.to_sentence}
     end
   end
 end
