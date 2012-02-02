@@ -5,6 +5,8 @@ WcnhWeb::Application.routes.draw do
 
   get "pages/:name" => "pages#show", :as => "page"
 
+  get 'api/:event' => "api#dispatch_handler" # Web API
+
   # old site URLs
   match "/intro" => redirect("/pages/introduction")
   match "/faq" => redirect("/pages/faq")

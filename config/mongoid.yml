@@ -1,6 +1,6 @@
 development:
   host: localhost
-  database: wcnh_dev
+  database: wcnh
 
 test:
   host: localhost
