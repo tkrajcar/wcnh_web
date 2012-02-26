@@ -1,0 +1,28 @@
+#play.column.grid_12
+
+  .titlebar.row
+    .column.grid_3
+      %h1 
+        %a{:href => '/pages/running-arcs'} Story Arcs
+    .column.grid_9
+      %ul.menu
+        %li.first
+          %a{:href => '/pages/wanted/'} Wanted
+          
+  .row
+    .body.column.grid_9
+      - @wanted.each do |i|
+        %h4= "Wanted Entry #{i._id}"
+        %p
+          %strong Name: 
+          = "#{i.name}"
+          %br
+          %strong Bounty: 
+          = "#{number_with_delimiter(i.amount, :delimiter => ",")}"
+          %br
+          %strong Contact:
+          = "#{i.contact}"
+          %br
+          %strong Details: 
+          = "#{i.info}"
+        .row
