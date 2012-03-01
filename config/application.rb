@@ -63,5 +63,8 @@ module WcnhWeb
     config.after_initialize do |app|
       app.routes.append{ match '*a', :to => 'application#render_404' } unless config.consider_all_requests_local
     end
+
+    # Disable Devise automatic schema now that we're on 2.0
+    Devise.apply_schema = false
   end
 end
