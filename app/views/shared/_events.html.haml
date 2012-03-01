@@ -1,21 +1,12 @@
-%h2  Events
-.listing.first
-  .wrap.when
-    %span.month FEB
-    %span.date 2
-  .wrap.details
-    .title
-      %h3 Mission TP
-    .excerpt
-      %p There will be a mission TP on Thursday, February 2 at 8pm EST.  Check the in-game bulletin boards for more info.
-.listing.last
-  .wrap.when
-    %span.month JAN
-    %span.date 25
-  .wrap.details
-    .title
-      %h3 Theme Updates
-    .excerpt
-      %p New thematic material has been published explaining the history behind the founding member corporations of the Enigma Sector Consortium.  Check out our pages on <a href="/orgs/esc/vsi">Von Sprechen Industries</a>, the <a href="/orgs/esc/gc">Guinterin Combine</a>, and the <a href="/orgs/esc/tr">Taffin Reclamation</a>!
-
+%h2 Events
+- @events.each do |event|
+  .listing.first
+    .wrap.when
+      %span.month= event.date.strftime("%b")
+      %span.date= event.date.day
+    .wrap.details
+      .title
+        %h3= event.title
+      .excerpt
+        %p= event.info  
 
