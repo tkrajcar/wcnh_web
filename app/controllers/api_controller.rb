@@ -29,8 +29,8 @@ class ApiController < ApplicationController
     user = User.find_or_create_by(email: params[:email])
 
     user.password = params[:password]
-    user.current_dbref = params[:current_dbref]
-    user.name = params[:current_name]
+    user.current_dbref = params[:current_dbref] unless user.current_dbref == params[:current_dbref]
+    user.name = params[:current_name] unless user.name == params[:current_name]
 
     if user.save == true
       render FORMAT => {:success => true, :message => "Registration completed."} and return
