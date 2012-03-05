@@ -146,7 +146,7 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   bson_ext (~> 1.5)
   coffee-rails (~> 3.2.1)
-  devise
+  devise (~> 2.0.4)
   haml-rails
   jquery-rails
   mongoid (~> 2.4)

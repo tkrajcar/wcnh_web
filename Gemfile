@@ -13,7 +13,7 @@ gem 'bson_ext', '~> 1.5'
 gem 'rdiscount', '~> 1.6.8' # used to parse wiki markup to html
 gem 'pry'
 
-gem 'devise'
+gem 'devise', "~> 2.0.4"
 
 gem 'thin'
 
