@@ -10,6 +10,9 @@ gem 'haml-rails'
 gem 'mongoid', '~> 2.4'
 gem 'bson_ext', '~> 1.5'
 
+gem 'rdiscount', '~> 1.6.8' # used to parse wiki markup to html
+gem 'pry'
+
 gem 'devise'
 
 gem 'thin'
