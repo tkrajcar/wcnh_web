@@ -6,8 +6,11 @@ class PagesController < ApplicationController
 
   def show
     filename = "temp_content/#{params['name']}.haml"
-    @wanted = Wanted.where(:visible => true).desc if params['name'] == 'wanted'
     raise ActionController::RoutingError.new('Page Not Found') unless File.exists? filename
     render :file => filename
+  end
+
+  def wanted
+   @wanted = Wanted.where(:visible => true).desc 
   end
 end
