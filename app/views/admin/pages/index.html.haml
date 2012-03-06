@@ -1,0 +1,24 @@
+-title_and_h1 "Edit Pages"
+
+.column.grid_12.body
+  %table
+    %tr
+      %th Title
+      %th Primary URL
+      %th Sidebar(s)
+      %th Revision
+      %th Last Updated
+      %th Links
+    -@pages.each do |page|
+      %tr
+        %td= page.title
+        %td= page.urls[0]
+        %td= page.sidebars
+        %td= page.version
+        %td= page.updated_at
+        %td
+          =link_to "Edit", admin_pages_edit_path(page)
+          =link_to "Delete", admin_pages_delete_path(page), :confirm => "Are you sure? This REALLY can't be undone."
+
+  %p=link_to content_tag(:span, "Create new page"), admin_pages_new_path, :class => "bigbutton"
+

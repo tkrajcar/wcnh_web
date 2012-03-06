@@ -4,6 +4,15 @@ WcnhWeb::Application.routes.draw do
   root :to => "pages#homepage"
 
   get "pages/:name" => "pages#show", :as => "page"
+  namespace "admin" do
+    get "pages" => "pages#index", :as => "pages"
+    get "pages/:id/edit" => "pages#edit", :as => "pages_edit"
+    get "pages/new" => "pages#new", :as => "pages_new"
+    get "pages/:id/delete" => "pages#delete", :as => "pages_delete"
+  end
+  post "pages" => "admin/pages#create", :as => "pages"
+  put "pages/:id" => "admin/pages#save", :as => "pages_save"
+
 
   get "wanted" => "pages#wanted"
 

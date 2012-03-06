@@ -4,8 +4,9 @@ class User
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :rememberable, :trackable, :validatable
 
-  field :name
-  field :current_dbref
+  field :name, :type => String
+  field :current_dbref, :type => String
+  field :admin, :type => Boolean, :default => false
 
   ## Database authenticatable
   field :email,              :type => String, :null => false
