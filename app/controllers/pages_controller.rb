@@ -5,9 +5,12 @@ class PagesController < ApplicationController
   end
 
   def show
-    filename = "temp_content/#{params['name']}.haml"
-    raise ActionController::RoutingError.new('Page Not Found') unless File.exists? filename
-    render :file => filename
+    url_parameter = params['name'].parameterize
+    @page = Page.where(urls: url_parameter).first
+    raise ActionController::RoutingError.new('Page Not Found') if @page.nil?
+
+    # 301 redirect to 'proper url', if it isn't what they used
+    redirect_to :name => @page.urls[0], :status => 301 if @page.urls[0] != url_parameter
   end
 
   def wanted

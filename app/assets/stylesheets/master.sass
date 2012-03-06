@@ -67,6 +67,7 @@ body
   font: 12pt/1.0 "Terminal Dosis"
   background: $black
   color: $white
+  line-height: 1.1em
 
 a:link,
 a:visited,
@@ -97,7 +98,7 @@ body a:hover
   font-size: 10pt
 #header
   margin-top: 10px
-  margin-bottom: 30px
+  margin-bottom: 20px
 
 #footer
   margin-top: 60px
@@ -111,8 +112,9 @@ h1, h2, h3, h4
   font-family: "Ubuntu Condensed"
 
 h1
-  font-size: 16pt
-
+  font-size: 20pt
+  padding: 5pt 5pt 5pt 10pt
+  background: $dgrey
 h2
   font-size: 14pt
   text-transform: uppercase
@@ -144,19 +146,6 @@ strong
 #nav ul li
   margin-bottom: 4px
 
-// Page Titlebar
-
-#page .titlebar
-  margin-bottom: 20px
-
-#page .titlebar .grid_3
-  background: $dgrey
-  width: 160px
-  padding: 8px 5px
-
-#page .titlebar h1
-  text-align: center
-
 // Page Menu
 
 #page ul.menu li
@@ -176,9 +165,9 @@ strong
 // Page Body
 
 #page .body
-  width: 670px
   padding: 15px
   background: $black
+  min-height: 200px
   @include transparent
 
 #page .body p
@@ -217,6 +206,8 @@ strong
   padding-bottom: 40px
   font-size: 14pt
   text-align: center
+#home .sublead p
+  line-height: 1.2em
 
 #home h2
   margin-bottom: 10px
@@ -262,6 +253,7 @@ strong
 
 #home .reports .headline, #home .reports p
   background: $black
+  line-height: 1.3em
   @include transparent
   padding: 6px 8px
 
