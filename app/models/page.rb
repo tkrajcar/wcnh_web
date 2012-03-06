@@ -7,6 +7,7 @@ class Page
   field :title, :type => String
   field :text, :type => String
   field :urls, :type => Array
+  field :sidebars, :type => Array
 
   def to_html
     RDiscount.new(self.text).to_html

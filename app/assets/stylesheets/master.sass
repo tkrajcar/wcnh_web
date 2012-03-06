@@ -114,6 +114,7 @@ h1, h2, h3, h4
 h1
   font-size: 20pt
   padding: 5pt 5pt 5pt 10pt
+  margin: 10px
   background: $dgrey
 h2
   font-size: 14pt
@@ -165,7 +166,7 @@ strong
 // Page Body
 
 #page .body
-  padding: 15px
+  padding: 10px
   background: $black
   min-height: 200px
   @include transparent
@@ -176,14 +177,18 @@ strong
   text-align: justify
 
 // Page Sidebar
-
+#page .sidebar 
+  width: 200px
+#page .sidebar .item
+  background: $dgrey
+  @include transparent
+  margin: 10px 0
+  padding: 5px
 #page .sidebar img
   margin-bottom: 10px
 
 #page .sidebar table
   width: 100%
-  background: $black
-  @include transparent
 
 #page .sidebar td.label
   font-family: "Ubuntu Condensed"

@@ -11,6 +11,10 @@ class PagesController < ApplicationController
 
     # 301 redirect to 'proper url', if it isn't what they used
     redirect_to :name => @page.urls[0], :status => 301 if @page.urls[0] != url_parameter
+    @sidebars = []
+    @page.sidebars.each do |sidebar_url|
+      @sidebars << Page.where(urls: sidebar_url).first
+    end
   end
 
   def wanted
