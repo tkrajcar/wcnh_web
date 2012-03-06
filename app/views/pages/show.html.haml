@@ -1,6 +1,6 @@
 -title_and_h1 @page.title
 
--if @sidebars.length
+-if @sidebars.length > 0
   .column.grid_9.body=@page.to_html.html_safe
 -else
   .column.grid_12.body=@page.to_html.html_safe
