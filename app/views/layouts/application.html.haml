@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Wing Commander: New Horizon MUSH
+    %title #{yield(:page_title)} - Wing Commander: New Horizon MUSH
     = stylesheet_link_tag    "application", :media => "all" 
     %link{:rel => 'stylesheet', :type => 'text/css', :href => 'http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Terminal+Dosis:400,600'}
 
@@ -24,6 +24,8 @@
         %p.alert
           %span=alert
     #page.row
+      -if content_for?(:page_h1)
+        %h1=yield(:page_h1)
       = yield
 
     #footer.row
