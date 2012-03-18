@@ -1,0 +1,28 @@
+= form_for @page do |f|
+  -if @page.errors.any?
+    #error_explanation
+      %h2 #{pluralize(@page.errors.count, "error")} prohibited this page from being saved:
+      %ul
+      - @page.errors.full_messages.each do |msg|
+        %li=msg
+  %table
+    %tr
+      %td
+        Page title:
+      %td=f.text_field :title
+    %tr
+      %td
+        Page body:
+        %br
+        %small=link_to "(Markdown quick reference)", "http://www.darkcoding.net/software/markdown-quick-reference/", :target => "blank"
+      %td=f.text_area :text, :size => "80x20"
+    %tr
+      %td Page URLs:
+      %td=@page.urls
+    %tr
+      %td Page sidebars:
+      %td=@page.sidebars
+    %tr
+      %td
+      %td
+        =f.submit

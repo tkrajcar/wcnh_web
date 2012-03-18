@@ -26,7 +26,7 @@ class Admin::PagesController < ApplicationController
   def save
     @page = Page.find(params[:id])
     if @page.update_attributes(params[:page])
-      redirect_to page_path(@page.name), :notice => "Page edited."
+      redirect_to page_path(@page.urls.first), :notice => "Page edited."
     else
       render :action => "edit"
     end
