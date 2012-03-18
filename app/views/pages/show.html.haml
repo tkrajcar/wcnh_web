@@ -11,3 +11,6 @@
       .item
         %h3=sidebar.title
         .text=sidebar.to_html.html_safe
+
+-if user_signed_in? && current_user.admin
+  =link_to "Edit Page", admin_pages_edit_path(@page)
