@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def homepage
     @events = Event.where(date: DateTime.now..DateTime.now + 30.days).desc(:date)
-    @events = Event.all.to_a.last(10) if @events.count < 10.desc(:date)
+    @events = Event.all.desc(:date).limit(10) if @events.count < 10
   end
 
   def show
