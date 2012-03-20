@@ -15,5 +15,6 @@
     .events.column.grid_6
       =render :partial => "shared/events"
     .reports.column.grid_6
-      =render :partial => "shared/headlines"
+      %h2=@headlines.title
+      =@headlines.to_html.html_safe
 

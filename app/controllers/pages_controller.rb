@@ -2,6 +2,9 @@ class PagesController < ApplicationController
   def homepage
     @events = Event.where(date: DateTime.now..DateTime.now + 30.days).desc(:date)
     @events = Event.all.desc(:date).limit(10) if @events.count < 10
+
+    @headlines = Page.where(urls: "headline-news").first
+    
   end
 
   def show
