@@ -25,4 +25,8 @@ class PagesController < ApplicationController
   def wanted
    @wanted = Wanted.where(:visible => true).desc 
   end
+  
+  def rp
+    @rpcats = RP_Category.all.desc
+  end
 end

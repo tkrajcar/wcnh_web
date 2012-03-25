@@ -15,6 +15,7 @@ WcnhWeb::Application.routes.draw do
 
 
   get "wanted" => "pages#wanted"
+  get "rp" => "pages#rp"
 
   get 'api/:event' => "api#dispatch_handler" # Web API
 
