@@ -11,7 +11,10 @@
       -@rpcats.each do |i|
         %strong= link_to(i.name, rp_path(:category => i.name))
         =" - #{i.desc}"
+        %br
     -else
+      %h3= "#{i.name} - #{i.desc}"
+      %br
       -@rpitems.each do |i|
         %h4= "Post #{i.num}"
         %p
@@ -29,5 +32,6 @@
     %h3 Categories
     -@rpcats.each do |i|
       =link_to(i.name, rp_path(:category => i.name)) + " (#{i.items.count} posts)"
+      %br
         
   
