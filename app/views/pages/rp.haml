@@ -16,16 +16,13 @@
       %h3= "#{@cat.first.name} - #{@cat.first.desc}"
       %br
       -@rpitems.each do |i|
-        %h4= "Post #{i.num}"
+        %h4=i.title
         %p
-          %strong Title: 
-          = "#{i.title}"
-          %br
           %strong Posted:
           = i.created_at.strftime("%A, %B %e %Y")
           %br
-          %strong Details: 
-          = "#{i.info}"
+          %strong Details:
+          =i.info
 
 .column.sidebar
   .item
@@ -33,5 +30,3 @@
     -@rpcats.each do |i|
       =link_to(i.name, rp_path(:category => i.name)) + " (#{i.items.count} posts)"
       %br
-        
-  
