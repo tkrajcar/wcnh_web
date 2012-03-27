@@ -28,5 +28,8 @@ class PagesController < ApplicationController
   
   def rp
     @rpcats = RP_Category.all.desc
+    if @cat = RP_Category.where(:name => params[:category]) then
+      @rpitems = @cat.first.items.desc(:votes, :created_at) if @cat.count > 0 && params[:category]
+    end
   end
 end

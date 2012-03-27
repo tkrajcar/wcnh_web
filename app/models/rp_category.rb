@@ -5,5 +5,5 @@ class RP_Category
   field :name, type: String
   field :desc, type: String
   
-  has_many :items, :class_name => "RP_Item"
+  has_many :items, :class_name => "RP_Item", :inverse_of => :category
 end

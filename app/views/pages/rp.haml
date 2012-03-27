@@ -1,11 +1,33 @@
 -title_and_h1 "Roleplaying Opportunities"
 
 .column.grid_9.body
+  -if !@rpitems then
+    %p
+      Roleplaying Opportunities are the New Horizon version of Craigslist.  Maybe you're looking for a character concept to jump start your imagination.
+      Or maybe you're just looking for an ongoing plot to join.  Whatever the case, the Roleplaying Opportunities list is a collection point for any and 
+      all ideas related to roleplaying.  The items listed here are linked to the in-game '+rp' system, which allows players to post their ideas while 
+      they're online.  Posts are categorized as follows:
+    %p
+      -@rpcats.each do |i|
+        %strong= link_to(i.name, rp_path(:category => i.name))
+        =" - #{i.desc}"
+    -else
+      -@rpitems.each do |i|
+        %h4= "Post #{i.num}"
+        %p
+          %strong Title: 
+          = "#{i.title}"
+          %br
+          %strong Posted:
+          = i.created_at.strftime("%A, %B %e %Y")
+          %br
+          %strong Details: 
+          = "#{i.info}"
 
 .column.sidebar
-  %h3 Categories
-  -@rpcats.each do |i|
-    .item
-      .text=i.name
+  .item
+    %h3 Categories
+    -@rpcats.each do |i|
+      =link_to(i.name, rp_path(:category => i.name)) + " (#{i.items.count} posts)"
         
   
