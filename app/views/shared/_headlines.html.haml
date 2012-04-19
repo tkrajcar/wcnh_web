@@ -4,4 +4,4 @@
     .title
       %h3= story.title
     .excerpt
-      %p= story.body
+      %p= story.body.gsub("\n","<br>").html_safe
