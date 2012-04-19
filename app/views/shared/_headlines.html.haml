@@ -1,0 +1,7 @@
+%h2 Headline News
+- @headlines.each do |story|
+  .listing.first
+    .title
+      %h3= story.title
+    .excerpt
+      %p= story.body
