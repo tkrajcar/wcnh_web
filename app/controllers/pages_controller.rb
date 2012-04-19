@@ -3,8 +3,7 @@ class PagesController < ApplicationController
     @events = Event.where(date: DateTime.now..DateTime.now + 30.days).desc(:date)
     @events = Event.all.desc(:date).limit(10) if @events.count < 10
 
-    @headlines = Page.where(urls: "headline-news").first
-    
+    @headlines = BB_Category.where(:name => 'IC - Enigma Sector News Net').first.posts.where(:parent_id => nil).desc(:created_at).limit(10)
   end
 
   def show
