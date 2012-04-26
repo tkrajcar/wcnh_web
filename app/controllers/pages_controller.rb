@@ -31,4 +31,8 @@ class PagesController < ApplicationController
       @rpitems = @cat.first.items.desc(:votes, :created_at) if @cat.count > 0 && params[:category]
     end
   end
+  
+  def headlines
+    @headlines = BB_Category.where(:name => 'IC - Enigma Sector News Net').first.posts.where(:parent_id => nil).desc(:created_at).limit(10)
+  end
 end
