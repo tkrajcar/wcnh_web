@@ -10,7 +10,7 @@ xml.rss :version => "2.0" do
         xml.title story.title
         xml.description story.body.gsub("\n", "<br>").html_safe
         xml.pubDate story.created_at.to_s(:rfc822)
-        xml.guid headline.id.to_s
+        xml.guid story.id.to_s
       end
     end
   end
