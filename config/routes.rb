@@ -19,7 +19,7 @@ WcnhWeb::Application.routes.draw do
   
   get "headlines" => "feeds#headlines"
   get "gmemits" => "feeds#gmemits"
-
+  
   get 'api/:event' => "api#dispatch_handler" # Web API
 
   # old site URLs

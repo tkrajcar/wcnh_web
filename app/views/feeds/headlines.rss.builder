@@ -8,8 +8,9 @@ xml.rss :version => "2.0" do
     for story in @headlines
       xml.item do
         xml.title story.title
-        xml.description story.body.html_safe
+        xml.description story.body.gsub("\n", "<br>").html_safe
         xml.pubDate story.created_at.to_s(:rfc822)
+        xml.guid headline.id.to_s
       end
     end
   end
