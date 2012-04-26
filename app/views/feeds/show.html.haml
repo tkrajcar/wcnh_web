@@ -1,3 +1,6 @@
-%h1= "RSS Post: #{@post.title}"
+%h1= @post.category.name + ' (RSS Item)'
 .column.grid_12.body
+  %h2= @post.title
+  %p
   %p= @post.body.gsub("\n", "<br>").encode("ASCII").gsub(/\x02\S*\x03/,'').html_safe
+  %p= "(Posted #{@post.created_at.strftime("%B %e %Y %H:%M %Z")})"
