@@ -17,7 +17,8 @@ WcnhWeb::Application.routes.draw do
   get "wanted" => "pages#wanted"
   get "rp" => "pages#rp"
   
-  get "headlines" => "pages#headlines"
+  get "headlines" => "feeds#headlines"
+  get "gmemits" => "feeds#gmemits"
 
   get 'api/:event' => "api#dispatch_handler" # Web API
 
