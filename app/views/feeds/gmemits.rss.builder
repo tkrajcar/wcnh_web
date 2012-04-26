@@ -8,7 +8,7 @@ xml.rss :version => "2.0" do
     for emit in @gmemits
       xml.item do
         xml.title emit.title
-        xml.description emit.body
+        xml.description emit.body.html_safe
         xml.pubDate emit.created_at.to_s(:rfc822)
       end
     end
