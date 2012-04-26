@@ -1,0 +1,3 @@
+%h1= "RSS Post: #{@post.title}"
+.column.grid_12.body
+  %p= @post.body.gsub("\n", "<br>").encode("ASCII").gsub(/\x02\S*\x03/,'').html_safe
