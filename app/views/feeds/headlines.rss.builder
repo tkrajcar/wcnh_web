@@ -10,7 +10,8 @@ xml.rss :version => "2.0" do
         xml.title story.title
         xml.description story.body.gsub("\n", "<br>").html_safe
         xml.pubDate story.created_at.to_s(:rfc822)
-        xml.guid story.id.to_s
+        xml.link url_for :controller => 'feeds', :action => 'show', :id => story.id
+        xml.guid url_for :controller => 'feeds', :action => 'show', :id => story.id
       end
     end
   end

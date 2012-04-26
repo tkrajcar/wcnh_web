@@ -10,6 +10,8 @@ xml.rss :version => "2.0" do
         xml.title emit.title
         xml.description emit.body.encode("ASCII").gsub(/\x02\S*\x03/,'')
         xml.pubDate emit.created_at.to_s(:rfc822)
+        xml.link url_for :controller => 'feeds', :action => 'show', :id => emit.id
+        xml.guid url_for :controller => 'feeds', :action => 'show', :id => emit.id
       end
     end
   end

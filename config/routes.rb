@@ -19,6 +19,7 @@ WcnhWeb::Application.routes.draw do
   
   get "headlines" => "feeds#headlines"
   get "gmemits" => "feeds#gmemits"
+  get "show_rss/:id" => "feeds#show"
   
   get 'api/:event' => "api#dispatch_handler" # Web API
 
