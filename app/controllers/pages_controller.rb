@@ -31,4 +31,8 @@ class PagesController < ApplicationController
       @rpitems = @cat.first.items.desc(:votes, :created_at) if @cat.count > 0 && params[:category]
     end
   end
+
+  def recent_changes(number=50)
+    @pages = Page.all.desc(:updated_at).limit(number)
+  end
 end

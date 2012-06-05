@@ -16,6 +16,7 @@ WcnhWeb::Application.routes.draw do
 
   get "wanted" => "pages#wanted"
   get "rp" => "pages#rp"
+  get "recent_changes" => "pages#recent_changes"
   
   get "headlines" => "feeds#headlines"
   get "gmemits" => "feeds#gmemits"
