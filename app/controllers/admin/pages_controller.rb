@@ -4,7 +4,7 @@ class Admin::PagesController < ApplicationController
 
   def index
     if current_user.admin?
-      @pages = Page.all if current_user.admin?
+      @pages = Page.all
     else
       @pages = Page.where(author: current_user.name)
     end
