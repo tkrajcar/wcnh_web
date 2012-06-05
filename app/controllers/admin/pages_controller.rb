@@ -1,13 +1,21 @@
 class Admin::PagesController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :is_admin!
+  before_filter :is_admin!, :only => [:delete]
 
   def index
-    @pages = Page.all
+    if current_user.admin?
+      @pages = Page.all if current_user.admin?
+    else
+      @pages = Page.where(author: current_user.name)
+    end
   end
 
   def edit
     @page = Page.find(params[:id])
+    unless current_user.admin? || current_user.name == @page.author
+      flash[:alert] = "Permission denied."
+      redirect_to root_path 
+    end
   end
 
   def new
@@ -16,6 +24,7 @@ class Admin::PagesController < ApplicationController
 
   def create
     @page = Page.new(params[:page])
+    @page.author = current_user.name
     if @page.save
       redirect_to(page_path(@page.urls.first), :notice => "Page created!")
     else
@@ -44,4 +53,5 @@ class Admin::PagesController < ApplicationController
       redirect_to root_path
     end
   end
+
 end
