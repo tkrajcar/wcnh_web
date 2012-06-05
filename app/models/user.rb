@@ -20,6 +20,9 @@ class User
   field :current_sign_in_ip, :type => String
   field :last_sign_in_ip,    :type => String
 
+  has_many :created, :class_name => "Page", :inverse_of => :creator # All of the pages created by the user
+  has_many :edits, :class_name => "Page", :inverse_of => :editor #All of the user's page edits
+
   validates_presence_of :name, :current_dbref
 
   validates_uniqueness_of :name, :email, :current_dbref, :case_sensitive => false

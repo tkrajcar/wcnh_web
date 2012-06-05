@@ -6,13 +6,13 @@ class Admin::PagesController < ApplicationController
     if current_user.admin?
       @pages = Page.all
     else
-      @pages = Page.where(author: current_user.name)
+      @pages = Page.where(creator_id: current_user.id)
     end
   end
 
   def edit
     @page = Page.find(params[:id])
-    unless current_user.admin? || current_user.name == @page.author
+    unless current_user.admin? || current_user == @page.creator
       flash[:alert] = "Permission denied."
       redirect_to root_path 
     end
@@ -24,8 +24,10 @@ class Admin::PagesController < ApplicationController
 
   def create
     @page = Page.new(params[:page])
-    @page.author = current_user.name
-    if @page.save
+    if @page.valid?
+      @page.creator = current_user
+      @page.editor = current_user
+      @page.save
       redirect_to(page_path(@page.urls.first), :notice => "Page created!")
     else
       render :action => "new"
@@ -35,6 +37,8 @@ class Admin::PagesController < ApplicationController
   def save
     @page = Page.find(params[:id])
     if @page.update_attributes(params[:page])
+      @page.editor = current_user
+      @page.save
       redirect_to page_path(@page.urls.first), :notice => "Page edited."
     else
       render :action => "edit"

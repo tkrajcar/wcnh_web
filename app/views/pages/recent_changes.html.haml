@@ -10,13 +10,13 @@
     -@pages.each do |page|
       %tr
         %td= link_to page.title, "pages/#{page.urls.first}"
-        %td= page.author
+        %td= page.editor.nil? ? "" : page.editor.name
         %td= page.updated_at.strftime("%d %b %Y %H:%M %Z")
         -if page.versions.count > 0
-          -change = page.versions.last.text.length - page.versions[page.versions.count - 2].text.length
+          -change = page.text.length - page.versions[page.versions.count - 2].text.length
           -if change > 0
-            %td= "#{change.abs} deletions"
-          -else
             %td= "#{change} additions"
+          -else
+            %td= "#{change.abs} deletions"
         -else
           %td= "New Page"

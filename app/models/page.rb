@@ -9,7 +9,9 @@ class Page
   field :text, :type => String
   field :urls, :type => Array
   field :sidebars, :type => Array
-  field :author, :type => String
+
+  belongs_to :creator, :class_name => "User" # Original creator
+  belongs_to :editor, :class_name => "User" # Most recent editor
 
   def to_html
     RDiscount.new(self.text).to_html
