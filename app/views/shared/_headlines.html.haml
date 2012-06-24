@@ -4,4 +4,4 @@
     .title
       %h3= story.title
     .excerpt
-      %p= story.body.gsub("\n","<br>").html_safe
+      %p= "#{story.created_at.to_datetime.to_ictime.strftime('%B %e, %Y')}<br><br>#{story.body.gsub("\n","<br>")}".html_safe
