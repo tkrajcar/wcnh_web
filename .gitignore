@@ -17,3 +17,6 @@
 .sass-cache
 
 public/assets
+
+# Ignore project files from Eclipse
+.project
