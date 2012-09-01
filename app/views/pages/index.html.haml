@@ -1,0 +1,10 @@
+-title_and_h1 @title
+
+.column.grid_12.body
+  %table
+    %tr
+      %th Title
+      %th Author
+      %th Last Update
+      %th Changes
+    =render partial: "shared/page_list", collection: @pages, as: :page

@@ -1,7 +1,12 @@
--if user_signed_in?
-  Signed in as #{current_user.name} -
-  =link_to("Logout", destroy_user_session_path, :method => 'delete') 
-  | 
-  =link_to("My Pages", admin_pages_path)
--else
-  =link_to("Login", new_user_session_path)
+%div{class: 'tools'}
+  =form_tag '/search', method: :get do
+    =text_field_tag(:term)
+    =submit_tag('Search')
+  %div{class: 'user'}
+    -if user_signed_in?
+      Signed in as #{current_user.name} -
+      =link_to("Logout", destroy_user_session_path, :method => 'delete') 
+      | 
+      =link_to("My Pages", admin_pages_path)
+    -else
+      =link_to("Login", new_user_session_path)

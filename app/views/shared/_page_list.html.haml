@@ -1,0 +1,12 @@
+%tr
+  %td= link_to page.title, "pages/#{page.urls.first}"
+  %td= page.editor.nil? ? "" : page.editor.name
+  %td= page.updated_at.strftime("%d %b %Y %H:%M %Z")
+  -if page.versions.count > 1
+    -change = page.text.length - page.versions[page.versions.count - 2].text.length
+    -if change > 0
+      %td= "#{change} additions"
+    -else
+      %td= "#{change.abs} deletions"
+  -else
+    %td= "New Page"
