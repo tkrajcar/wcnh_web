@@ -2,35 +2,38 @@ WcnhWeb::Application.routes.draw do
   devise_for :users
 
   root :to => "pages#homepage"
-
+  
+  get "pages" => "pages#index"
+  get "recent_changes" => "pages#index"
+  get "search" => "pages#index"
+    
   get "pages/:name" => "pages#show", :as => "page"
+  post "pages" => "admin/pages#create", :as => "pages"
+  put "pages/:id" => "admin/pages#save", :as => "pages_save"
+  
   namespace "admin" do
     get "pages" => "pages#index", :as => "pages"
     get "pages/:id/edit" => "pages#edit", :as => "pages_edit"
     get "pages/new" => "pages#new", :as => "pages_new"
     get "pages/:id/delete" => "pages#delete", :as => "pages_delete"
   end
-  post "pages" => "admin/pages#create", :as => "pages"
-  put "pages/:id" => "admin/pages#save", :as => "pages_save"
 
-
+  # Other static pages
   get "wanted" => "pages#wanted"
   get "rp" => "pages#rp"
-  get "recent_changes" => "pages#recent_changes"
-  
   get "headlines" => "feeds#headlines"
   get "gmemits" => "feeds#gmemits"
   get "show_rss/:id" => "feeds#show"
   get "announcements" => "feeds#announcements"
   get "contracts" => "feeds#contracts"
   
-  get 'api/:event' => "api#dispatch_handler" # Web API
+  # Web API
+  get 'api/:event' => "api#dispatch_handler" 
 
   # old site URLs
   match "/intro" => redirect("/pages/introduction")
   match "/faq" => redirect("/pages/faq")
   match "/play" => redirect("/pages/begin-playing")
-
   match "/systems" => redirect("/pages/inhabited-systems")
   match "/systems/cabrea" => redirect("/pages/cabrea-system")
   match "/systems/midgard" => redirect("/pages/midgard-system")
@@ -43,7 +46,6 @@ WcnhWeb::Application.routes.draw do
   match "/orgs/esc/gc" => redirect("/pages/guinterin-combine/")
   match "/orgs/esc/tr" => redirect("/pages/taffin-reclamation")
   match "/orgs/kc" => redirect("/pages/kilrathi-commonwealth")
-
   match "/origins" => redirect("/pages/origins")
   match "/recent" => redirect("/pages/recent-history")
   match "/arcs" => redirect("/pages/running-arcs")
