@@ -1,4 +1,4 @@
-=form_tag '/search', method: :get, style: "display:inline;margin-right:20px" do
+=form_tag '/search', method: :get do
   =text_field_tag(:term)
   =submit_tag('Search')
 -if user_signed_in?
