@@ -30,7 +30,7 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
-    bson (1.8.1)
+    bson (1.8.3)
     bson_ext (1.8.1)
       bson (~> 1.8.1)
     builder (3.0.4)
