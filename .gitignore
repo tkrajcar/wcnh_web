@@ -20,3 +20,5 @@ public/assets
 
 # Ignore project files from Eclipse
 .project
+
+.env
