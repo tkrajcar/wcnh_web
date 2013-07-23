@@ -28,7 +28,8 @@ WcnhWeb::Application.routes.draw do
   get "contracts" => "feeds#contracts"
   
   # Web API
-  get 'api/:event' => "api#dispatch_handler" 
+  # Commented out for wcmush.com archiving
+  #get 'api/:event' => "api#dispatch_handler" 
 
   # old site URLs
   match "/intro" => redirect("/pages/introduction")
