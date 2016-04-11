@@ -8,11 +8,7 @@ test:
 
 # set these environment variables on your prod server
 production:
-  host: ds033317.mongolab.com
-  database: heroku_app12872957
-  port: 33317
-  username: wcnh_web
-  password: jiminycricket
+  uri: <%= ENV["MONGOLAB_URI"]%>
   # slaves:
   #   - host: slave1.local
   #     port: 27018
